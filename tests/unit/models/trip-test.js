@@ -5,7 +5,7 @@ import {
 
 moduleForModel('trip', 'Trip', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:station', 'model:train']
 });
 
 test('it exists', function() {
