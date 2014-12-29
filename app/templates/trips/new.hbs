@@ -1,8 +1,8 @@
 <ul>
-  {{#each station in stations}}
-    <li>{{station.name}}</li>
-  {{/each}}
+  <li><strong>From:</strong> {{model.startStation.name }}</li>
+  <li><strong>To:</strong> {{model.stopStation.name }}</li>
 </ul>
+
 <h3>Select a station</h3>
 {{#each station in stations}}
   {{card-station station=station action='selectStation'}}
