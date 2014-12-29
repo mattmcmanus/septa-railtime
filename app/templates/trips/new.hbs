@@ -3,3 +3,7 @@
     <li>{{station.name}}</li>
   {{/each}}
 </ul>
+<h3>Select a station</h3>
+{{#each station in stations}}
+  {{card-station station=station action='selectStation'}}
+{{/each}}
