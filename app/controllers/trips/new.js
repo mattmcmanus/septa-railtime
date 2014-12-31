@@ -8,11 +8,11 @@ export default Ember.ObjectController.extend({
     selectStation: function(station) {
       if (!this.startChosen) {
         this.toggleProperty('startChosen');
-        this.model.set('startStation', station);
+        this.model.set('stationFrom', station);
       }
       else if (!this.stopChosen) {
         this.toggleProperty('stopChosen');
-        this.model.set('stopStation', station);
+        this.model.set('stationTo', station);
       }
       if (this.startChosen && this.stopChosen) {
         this.model.save();
