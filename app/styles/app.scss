@@ -1,5 +1,8 @@
 @import "bourbon";
+@import "base/base";
+@import "neat";
+
+@import "components/index";
 
 html, body {
-  margin: 20px;
 }
