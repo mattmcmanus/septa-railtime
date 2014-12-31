@@ -3,6 +3,9 @@ import Application from '../../app';
 import Router from '../../router';
 import config from '../../config/environment';
 
+// Helpers
+import clickStation from './click-station';
+
 export default function startApp(attrs) {
   var application;
 
