@@ -4,7 +4,6 @@ export default Ember.ObjectController.extend({
   startChosen: false,
   stopChosen: false,
 
-
   actions: {
     selectStation: function(station) {
       if (!this.startChosen) {
@@ -16,7 +15,8 @@ export default Ember.ObjectController.extend({
         this.model.set('stopStation', station);
       }
       if (this.startChosen && this.stopChosen) {
-        console.log('TRIP TIME');
+        this.model.save();
+        this.transitionToRoute('trips.index');
       }
     }
   }

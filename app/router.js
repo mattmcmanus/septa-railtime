@@ -6,11 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource("trips", function() {
-    this.resource("trip", {
-      path: "trips/:trip_id"
-    }, function() {});
+  this.resource("trip", { path: "trip/:trip_id" });
 
+  this.resource("trips", { path: "/" }, function() {
     this.route("new");
   });
 });

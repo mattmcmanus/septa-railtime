@@ -12,10 +12,21 @@ module('Acceptance: TripsNew', {
   }
 });
 
-test('visiting /trips/new', function() {
-  visit('/trips/new');
+test('Creating a new trip', function() {
+  visit('/new');
+
+  clickStation('Glenside');
 
   andThen(function() {
-    equal(currentPath(), 'trips.new');
+    equal(find('.trip-details .from').text(), 'Glenside');
+  });
+
+  clickStation('Jefferson Station');
+
+  andThen(function() {
+    // equal(find('.trip-details .to').text(), 'Jefferson Station');
+    equal(currentRouteName(), 'trips.index');
+    equal(currentPath(), 'trips.index');
+    equal(currentURL(), '/');
   });
 });
