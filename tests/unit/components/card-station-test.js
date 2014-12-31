@@ -21,6 +21,18 @@ test('it renders', function() {
   equal(component._state, 'inDOM');
 });
 
+test('it has the proper classes', function(){
+  expect(1);
+  var component = this.subject();
+  var $component = this.append();
+
+  Ember.run(function() {
+    component.set('station', Ember.Object.create({ name: 'Wayne Junction' }));
+  });
+
+  ok($component.hasClass('station-wayne-junction'));
+});
+
 
 test('it fires an action on click', function(){
   expect(2);
