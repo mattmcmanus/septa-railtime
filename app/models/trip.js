@@ -3,7 +3,16 @@ import DS from 'ember-data';
 var Trip = DS.Model.extend({
   stationFrom: DS.belongsTo('station'),
   stationTo: DS.belongsTo('station'),
-  trains: DS.hasMany('train')
+  trainsCount: DS.attr('number'),
+  trains: DS.hasMany('train', { async: true }),
+
+  trainsQuery: function() {
+    return {
+      req1: this.get('stationFrom.name'),
+      req2: this.get('stationTo.name'),
+      req3: this.get('trainsCount')
+    };
+  }.property('stationFrom', 'stationTo')
 });
 
 Trip.reopenClass({

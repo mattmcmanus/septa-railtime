@@ -1,6 +1,6 @@
 <h3><span class="from">{{ trip.stationFrom.name }}</span> > <span class="to">{{ trip.stationTo.name }}</span></h3>
-<ul>
-  <li>train</li>
-  <li>train</li>
-</ul>
+{{#each train in trip.trains}}
+  <div>{{train}}</div>
+{{/each}}
+
 {{yield}}

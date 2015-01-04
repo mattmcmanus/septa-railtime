@@ -5,6 +5,15 @@ export default Ember.Route.extend({
     return this.store.find('trip');
   },
   beforeModel: function(){
-    this.store.find('station');
+    this.store.find('station'); // Load stations before trips
+  },
+  afterModel: function(trips) {
+    var store = this.store;
+    trips.forEach(function(trip){
+      store.find('train', trip.get('trainsQuery')).then(function(data){
+        console.log('TRAINS',data);
+        trip.get('trains').pushObjects(data);
+      });
+    });
   }
 });
