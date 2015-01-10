@@ -15,6 +15,4 @@ var app = new EmberApp({
   }
 });
 
-app.import('bower_components/momentjs/moment.js');
-
 module.exports = app.toTree();
