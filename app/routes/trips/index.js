@@ -11,7 +11,6 @@ export default Ember.Route.extend({
     var store = this.store;
     trips.forEach(function(trip){
       store.find('train', trip.get('trainsQuery')).then(function(data){
-        console.log('TRAINS',data);
         trip.get('trains').pushObjects(data);
       });
     });
