@@ -34,8 +34,8 @@ export default DS.RESTSerializer.extend({
       trains_payload.push({
         id: train.orig_train,
         line: train.orig_line,
-        departureTime: train.orig_departure_time,
-        arrivalTime: train.orig_arrival_time,
+        departureTime: moment(train.orig_departure_time,'hh:mmA').toISOString(),
+        arrivalTime: moment(train.orig_arrival_time,'hh:mmA').toISOString(),
         delay: delay(train.orig_delay)
       });
     });
