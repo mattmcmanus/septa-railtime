@@ -3,13 +3,13 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('train', 'Train', {
-  // Specify the other units that are required for this test.
-  needs: []
-});
+moduleForModel('train', 'Train');
 
-test('it exists', function() {
-  var model = this.subject();
-  // var store = this.store();
-  ok(!!model);
+test('#departsIn', function() {
+  var model = this.subject({
+    departureTime: moment().add(2, 'minutes'),
+    delay: 5
+  });
+
+  equal(model.get('departsIn'), 6);
 });

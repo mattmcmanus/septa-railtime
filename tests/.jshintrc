@@ -45,7 +45,8 @@
     "currentURL",
     "currentPath",
     "currentRouteName",
-    "clickStation"
+    "clickStation",
+    "moment"
   ],
   "node": false,
   "browser": false,
