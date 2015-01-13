@@ -5,9 +5,18 @@ import {
 
 moduleForModel('train', 'Train');
 
+test('#name', function(){
+  var model = this.subject({
+    line: 'Traintown',
+    departing: moment('05:56PM','hh:mmA').toISOString(),
+  });
+
+  equal(model.get('name'), '5:56PM Traintown');
+});
+
 test('#departsIn', function() {
   var model = this.subject({
-    departureTime: moment().add(2, 'minutes'),
+    departing: moment().add(2, 'minutes'),
     delay: 5
   });
 

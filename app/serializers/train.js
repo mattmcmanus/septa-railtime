@@ -10,12 +10,11 @@ export default DS.RESTSerializer.extend({
   //  "isdirect":"true"]
   // To: {
   //    line: 'Err',
-  //    departureTime:
-  //    arrivalTime:
+  //    departing:
+  //    arriving:
   //    delay:
   // }
   extractArray: function(store, type, payload) {
-    console.log('extractArray', arguments);
     var trains_payload = [];
 
     function delay(orig_delay) {
@@ -30,8 +29,8 @@ export default DS.RESTSerializer.extend({
       trains_payload.push({
         id: train.orig_train,
         line: train.orig_line,
-        departureTime: moment(train.orig_departure_time,'hh:mmA').toISOString(),
-        arrivalTime: moment(train.orig_arrival_time,'hh:mmA').toISOString(),
+        departing: moment(train.orig_departure_time,'hh:mmA').toISOString(),
+        arriving: moment(train.orig_arrival_time,'hh:mmA').toISOString(),
         delay: delay(train.orig_delay)
       });
     });
