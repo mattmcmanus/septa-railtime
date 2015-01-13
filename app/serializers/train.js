@@ -1,10 +1,6 @@
 import DS from 'ember-data';
 
 export default DS.RESTSerializer.extend({
-  // normalizePayload: function(payload) {
-  //   return {'trains': payload};
-  // },
-
   // From: [{
   //  "orig_train":"471",
   //  "orig_line":"Warminster",
