@@ -4,8 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'septa-railtime',
     environment: environment,
-    baseURL: '/',
-    locationType: 'auto',
+    baseURL: '/septa-railtime',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         'ember-htmlbars': true
