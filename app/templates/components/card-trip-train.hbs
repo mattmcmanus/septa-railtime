@@ -1,0 +1,9 @@
+<h5>
+  {{train.name}}
+  {{#if train.delay}}
+    <small>({{train.status}} {{train.delay}} minutes)</small>
+  {{/if}}
+</h5>
+<h6 class="departsIn"><small>Leaves in</small> {{train.departsIn}} minutes</h6>
+<div>Departs: {{train.departing}}</div>
+<div>Arrives: {{train.arriving}}</div>

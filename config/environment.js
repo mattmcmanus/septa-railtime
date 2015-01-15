@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'septa-railtime',
     environment: environment,
-    baseURL: '/septa-railtime',
+    baseURL: '/',
     locationType: 'hash',
     EmberENV: {
       FEATURES: {

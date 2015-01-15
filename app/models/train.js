@@ -18,5 +18,16 @@ export default DS.Model.extend({
   departsIn: function(){
     var actualDepartureTime = moment(this.get('departing')).add(this.get('delay'), 'minutes');
     return actualDepartureTime.diff(moment(),'minutes');
-  }.property('departing','delay')
+  }.property('departing','delay'),
+
+  status: function(){
+    var delay = this.get('delay');
+    if (delay >= 10) {
+      return 'late';
+    } else if (delay < 10 && delay > 0) {
+      return 'delayed';
+    } else {
+      return 'on-time';
+    }
+  }.property('delay')
 });

@@ -22,3 +22,21 @@ test('#departsIn', function() {
 
   equal(model.get('departsIn'), 6);
 });
+
+test('#state is on-time', function(){
+  var model = this.subject({delay: 0});
+
+  equal(model.get('status'), 'on-time');
+});
+
+test('#state is delayed', function(){
+  var model = this.subject({delay: 5});
+
+  equal(model.get('status'), 'delayed');
+});
+
+test('#state is late', function(){
+  var model = this.subject({delay: 15});
+
+  equal(model.get('status'), 'late');
+});

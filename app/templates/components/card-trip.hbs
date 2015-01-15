@@ -1,10 +1,6 @@
 <h3><span class="from">{{ trip.stationFrom.name }}</span> > <span class="to">{{ trip.stationTo.name }}</span></h3>
 {{#each train in trip.trains}}
-  <div>{{train.line}}</div>
-  <div>{{train.departing}}</div>
-  <div>{{train.arriving}}</div>
-  <div>{{train.delay}}</div>
-  <div>leaves in: {{train.departsIn}} minutes</div>
+  {{card-trip-train train=train}}
 {{/each}}
 
 {{yield}}

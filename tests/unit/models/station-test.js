@@ -4,15 +4,10 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('station', 'Station', { });
+moduleForModel('station', 'Station', {});
 
 test('it exists', function() {
-  var model = this.subject();
-  var store = this.store();
+  var model = this.subject( { id: 90411, name: "Glenside", description: "Multiple Lines", longitude: 40.1013889, latitude: -75.1536111, zone: "3", wheelchairBoarding: false } );
 
-  Ember.run(function() {
-    model = store.find('station', 90411);
-  });
-
-  ok(!!model);
+  equal(model.get('name'), 'Glenside');
 });
