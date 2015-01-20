@@ -7,8 +7,8 @@ export default Ember.Component.extend({
   stationsClasses: function(){
     if (this.trip) {
       return [
-        'station-from-'+this.trip.get('stationFrom').get('name').dasherize(),
-        'station-to-'+this.trip.get('stationTo').get('name').dasherize()
+        'station-from-'+this.get('trip.stationFrom.name').dasherize(),
+        'station-to-'+this.get('trip.stationTo.name').dasherize()
       ].join(' ');
     }
   }.property('trip.stationTo.name', 'trip.stationFrom.name'),
