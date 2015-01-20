@@ -1,3 +1,15 @@
-<h2 id='title'>Septa Railtime <small>{{link-to 'New Trip' 'trips.new'}}</small></h2>
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    {{link-to 'Septa Railtime' 'trips.index' class='logo'}}
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        <li class="nav-link"> {{link-to 'Trips' 'trips.index'}} </li>
+        <li class="nav-link"> {{link-to 'New' 'trips.new' class='button'}} </li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-{{outlet}}
+<div class="content">
+  {{outlet}}
+</div>

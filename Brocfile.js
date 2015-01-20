@@ -9,6 +9,7 @@ var app = new EmberApp({
   },
   sassOptions: {
     includePaths: [
+      'bower_components/normalize-scss',
       'bower_components/bourbon/dist',
       'bower_components/neat/app/assets/stylesheets',
     ]
