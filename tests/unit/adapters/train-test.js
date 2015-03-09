@@ -9,8 +9,8 @@ moduleFor('adapter:train', 'TrainAdapter', {
 });
 
 // Replace this with your real tests.
-test('buildURL', function() {
+test('buildURL', function(assert) {
   var adapter = this.subject();
   var url = adapter.buildURL('train', '');
-  ok(adapter);
+  assert.ok(adapter);
 });

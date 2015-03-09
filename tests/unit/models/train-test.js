@@ -5,38 +5,38 @@ import {
 
 moduleForModel('train', 'Train');
 
-test('#name', function(){
+test('#name', function(assert) {
   var model = this.subject({
     line: 'Traintown',
     departing: moment('05:56PM','hh:mmA').toISOString(),
   });
 
-  equal(model.get('name'), '5:56PM Traintown');
+  assert.equal(model.get('name'), '5:56PM Traintown');
 });
 
-test('#departsIn', function() {
+test('#departsIn', function(assert) {
   var model = this.subject({
     departing: moment().add(2, 'minutes'),
     delay: 5
   });
 
-  equal(model.get('departsIn'), 6);
+  assert.equal(model.get('departsIn'), 6);
 });
 
-test('#state is on-time', function(){
+test('#state is on-time', function(assert) {
   var model = this.subject({delay: 0});
 
-  equal(model.get('status'), 'on-time');
+  assert.equal(model.get('status'), 'on-time');
 });
 
-test('#state is delayed', function(){
+test('#state is delayed', function(assert) {
   var model = this.subject({delay: 5});
 
-  equal(model.get('status'), 'delayed');
+  assert.equal(model.get('status'), 'delayed');
 });
 
-test('#state is late', function(){
+test('#state is late', function(assert) {
   var model = this.subject({delay: 15});
 
-  equal(model.get('status'), 'late');
+  assert.equal(model.get('status'), 'late');
 });

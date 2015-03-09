@@ -9,14 +9,14 @@ moduleForComponent('card-trip', 'CardTripComponent', {
   needs: ['model:station']
 });
 
-test('it renders', function() {
-  expect(4);
+test('it renders', function(assert) {
+  assert.expect(4);
 
   var component = this.subject();
-  equal(component._state, 'preRender');
+  assert.equal(component._state, 'preRender');
 
   var $component = this.append();
-  equal(component._state, 'inDOM');
+  assert.equal(component._state, 'inDOM');
 
   var trip = Ember.Object.create({
     id: 1,
@@ -28,6 +28,6 @@ test('it renders', function() {
     component.set('trip', trip);
   });
 
-  equal('Glenside', $component.find('.from').text());
-  equal('Jefferson Station', $component.find('.to').text());
+  assert.equal('Glenside', $component.find('.from').text());
+  assert.equal('Jefferson Station', $component.find('.to').text());
 });

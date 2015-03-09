@@ -9,20 +9,20 @@ moduleForComponent('card-station', 'CardStationComponent', {
   // needs: ['component:foo', 'helper:bar']
 });
 
-test('it renders', function() {
-  expect(2);
+test('it renders', function(assert) {
+  assert.expect(2);
 
   // creates the component instance
   var component = this.subject();
-  equal(component._state, 'preRender');
+  assert.equal(component._state, 'preRender');
 
   // appends the component to the page
   this.append();
-  equal(component._state, 'inDOM');
+  assert.equal(component._state, 'inDOM');
 });
 
-test('it has the proper classes', function(){
-  expect(1);
+test('it has the proper classes', function(assert) {
+  assert.expect(1);
   var component = this.subject();
   var $component = this.append();
 
@@ -30,12 +30,12 @@ test('it has the proper classes', function(){
     component.set('station', Ember.Object.create({ name: 'Wayne Junction' }));
   });
 
-  ok($component.hasClass('station-wayne-junction'));
+  assert.ok($component.hasClass('station-wayne-junction'));
 });
 
 
-test('it fires an action on click', function(){
-  expect(2);
+test('it fires an action on click', function(assert) {
+  assert.expect(2);
   var component = this.subject();
   var $component = this.append();
 
@@ -47,8 +47,8 @@ test('it fires an action on click', function(){
     selectStation: function(station){
       // we have the assertion here which will be
       // called when the action is triggered
-      ok(true, 'selectStation was called');
-      equal(station.name, 'station', 'it passes a station');
+      assert.ok(true, 'selectStation was called');
+      assert.equal(station.name, 'station', 'it passes a station');
     }
   };
 
