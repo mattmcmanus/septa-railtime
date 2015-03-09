@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  needs: 'station',
   startChosen: false,
   stopChosen: false,
 

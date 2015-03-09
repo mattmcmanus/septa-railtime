@@ -16,10 +16,12 @@ html, body {
 }
 
 .trip-selection {
+  z-index: $navigation-z-index;
   position: fixed;
   top: $navigation-height;
   left: 0;
   right: 0;
+  padding: .25em 1em;
   background: white;
   box-shadow: 0 2px 2px 2px rgba(34,34,34,.3)
 }

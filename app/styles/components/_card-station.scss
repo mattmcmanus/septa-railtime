@@ -1,4 +1,24 @@
 .card-station {
+  @include row();
+  position: relative;
   border: 1px solid #eee;
+  color: $base-font-color;
+  padding: .5em 1em;
+
+  p { margin: 0 }
+
+  .station-zone {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-weight: 700;
+    font-size: 2em;
+    color: #ccc;
+  }
+
+  .station-location {
+    font-size: .8em;
+    color: #ccc;
+  }
 }
 
