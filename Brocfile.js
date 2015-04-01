@@ -8,6 +8,11 @@ var app = new EmberApp({
   }
 });
 
-app.import('bower_components/normalize.css/normalize.css');
+app.import(app.bowerDirectory + '/normalize.css/normalize.css');
+app.import(app.bowerDirectory + '/ember-cli-moment-shim/moment-shim.js', {
+  exports: {
+    moment: ['default']
+  }
+});
 
 module.exports = app.toTree();
