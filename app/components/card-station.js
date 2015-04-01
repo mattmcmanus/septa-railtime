@@ -7,11 +7,11 @@ export default Ember.Component.extend({
 
   isActive: false,
 
-  stationClassName: function(){
+  stationClassName: Ember.computed('station.name', function(){
     return (this.station) ?
       'station-'+this.station.get('name').dasherize()
       : false;
-  }.property('station.name'),
+  }),
 
   click: function() {
     this.toggleProperty('isActive');

@@ -7,20 +7,20 @@ export default DS.Model.extend({
   arriving: DS.attr('date'),
   delay: DS.attr('number'),
 
-  name: function(){
+  name: Ember.computed('line', 'departureTime', function(){
     return this.get('departureTime') + ' ' + this.get('line');
-  }.property('line','departureTime'),
+  }),
 
-  departureTime: function(){
+  departureTime: Ember.computed('departing', function(){
     return moment(this.get('departing')).format('h:mmA');
-  }.property('departing'),
+  }),
 
-  departsIn: function(){
+  departsIn: Ember.computed('departing', 'delay', function(){
     var actualDepartureTime = moment(this.get('departing')).add(this.get('delay'), 'minutes');
     return actualDepartureTime.diff(moment(),'minutes');
-  }.property('departing','delay'),
+  }),
 
-  status: function(){
+  status: Ember.computed('delay', function(){
     var delay = this.get('delay');
     if (delay >= 10) {
       return 'late';
@@ -29,5 +29,5 @@ export default DS.Model.extend({
     } else {
       return 'on-time';
     }
-  }.property('delay')
+  })
 });

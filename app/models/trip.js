@@ -6,13 +6,13 @@ var Trip = DS.Model.extend({
   trainsCount: DS.attr('number'),
   trains: DS.hasMany('train', { async: true }),
 
-  trainsQuery: function() {
+  trainsQuery: Ember.computed('stationFrom', 'stationTo', function() {
     return {
       req1: this.get('stationFrom.name'),
       req2: this.get('stationTo.name'),
       req3: this.get('trainsCount')
     };
-  }.property('stationFrom', 'stationTo')
+  })
 });
 
 Trip.reopenClass({
