@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 var Trip = DS.Model.extend({
