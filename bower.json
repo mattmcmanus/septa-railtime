@@ -12,9 +12,8 @@
     "ember-qunit": "0.3.0",
     "ember-qunit-notifications": "0.0.7",
     "qunit": "~1.17.1",
-    "momentjs": "~2.8.4",
-    "bourbon": "3.2.3",
-    "neat": "1.5.1",
+    "bourbon": "4.2.1",
+    "neat": "1.7.2",
     "normalize.css": "~3.0.3"
   }
 }
