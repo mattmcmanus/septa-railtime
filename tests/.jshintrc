@@ -22,7 +22,7 @@
     "currentURL",
     "currentPath",
     "currentRouteName",
-    "moment"
+    "clickStation"
   ],
   "node": false,
   "browser": false,
