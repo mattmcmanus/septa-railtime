@@ -7,9 +7,14 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'hash',
     EmberENV: {
-      FEATURES: {
-        'ember-htmlbars': true
-      }
+      FEATURES: { }
+    },
+
+    sassOptions: {
+      includePaths: [
+        'bower_components/bourbon/app/assets/stylesheets',
+        'bower_components/neat/app/assets/stylesheets',
+      ]
     },
 
     APP: {

@@ -3,17 +3,11 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
-  '6to5': {
-    // disable comments
+  'babel': {
     comments: false
-  },
-  sassOptions: {
-    includePaths: [
-      'bower_components/normalize-scss',
-      'bower_components/bourbon/dist',
-      'bower_components/neat/app/assets/stylesheets',
-    ]
   }
 });
+
+app.import('bower_components/normalize.css/normalize.css');
 
 module.exports = app.toTree();

@@ -15,6 +15,6 @@
     "momentjs": "~2.8.4",
     "bourbon": "3.2.3",
     "neat": "1.5.1",
-    "normalize-scss": "~3.0.2"
+    "normalize.css": "~3.0.3"
   }
 }
